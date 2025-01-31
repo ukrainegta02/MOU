@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Керівництво</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #001f3d;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background: linear-gradient(145deg, #001f3d, #003366);
+            padding: 20px;
+            font-size: 2em;
+            color: #fcd116;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        
+        .leadership {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .leader-card {
+            background: #003b75;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .leader-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .leader-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .leader-card h2 {
+            color: #fcd116;
+            margin: 10px 0;
+        }
+        
+        .leader-card p {
+            color: #ffffff;
+        }
+
+
+        nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em 1em; /* Зменшені відступи */
+    font-size: 1.1em; /* Трохи зменшений розмір тексту */
+    transition: all 0.3s ease;
+    z-index: 1;
+    border-radius: 15px; /* Трохи менше закруглення */
+    overflow: hidden;
+    animation: slideInNav 1s ease-out;
+    width: fit-content; /* Робить ширину по контенту */
+    min-width: 250px; /* Мінімальна ширина для збереження форми */
+    margin: 1em auto; /* Центрує по горизонталі */
+    position: relative; /* Це дозволить краще контролювати вертикальне розташування */
+}
+
+
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 25px;
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fcd116;
+            transform: scale(1.1);
+            border-color: #fcd116;
+        }
+
+
+
+        </style>
+        
+
+</head>
+<body>
+    <header>
+        <h1>Керівництво</h1>
+    </header>
+<nav>
+    <a href="Про МОУ.html">Назад</a>
+</nav>
+    <main>
+        <section class="leadership">
+            <div class="leader-card">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/194.webp" alt="Олександр Шміт">
+                <h2>Олександр Шміт</h2>
+                <p>Президент України - Верховний Головнокомандувач Збройних Сил України</p>
+            </div>
+            <div class="leader-card">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/37.webp" alt="Роман Дацик">
+                <h2>Роман Дацик</h2>
+                <p>Міністр оборони України</p>
+            </div>
+            <div class="leader-card">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/50.webp" alt="Вакантно">
+                <h2>Вакантно</h2>
+                <p>Перший заступник міністра оборони України</p>
+            </div>
+            <div class="leader-card">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/257.webp" alt="Вакантно">
+                <h2>Вакантно</h2>
+                <p>Заступник міністра оборони України</p>
+            </div>
+            <div class="leader-card">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/255.webp" alt="Вакантно">
+                <h2>Вакантно</h2>
+                <p>Державний секретарь Міністерства оборони України</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

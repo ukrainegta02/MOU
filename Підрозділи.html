@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підрозділи Збройних Сил України</title>
+    <style>
+        /* Загальний стиль */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: #ffcc00;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            margin: 50px;
+            max-width: 1200px;
+            padding: 30px;
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            color: #ffcc00;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #bbb;
+            margin-bottom: 20px;
+            text-align: justify;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            color: #bbb;
+            margin: 12px 0;
+            padding-left: 20px;
+            position: relative;
+            animation: fadeIn 2s ease-in;
+        }
+
+        ul li::before {
+            content: "\2022";
+            font-size: 1.5rem;
+            color: #ffcc00;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #003366;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #ffcc00;
+            color: #003366;
+            transform: translateY(-5px);
+        }
+
+        .section-image {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .section-image img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .section-image img:hover {
+            transform: scale(1.05);
+        }
+
+
+        nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em 1em; /* Зменшені відступи */
+    font-size: 1.1em; /* Трохи зменшений розмір тексту */
+    transition: all 0.3s ease;
+    z-index: 1;
+    border-radius: 15px; /* Трохи менше закруглення */
+    overflow: hidden;
+    animation: slideInNav 1s ease-out;
+    width: fit-content; /* Робить ширину по контенту */
+    min-width: 250px; /* Мінімальна ширина для збереження форми */
+    margin: 1em auto; /* Центрує по горизонталі */
+    position: relative; /* Це дозволить краще контролювати вертикальне розташування */
+}
+
+
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 25px;
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fcd116;
+            transform: scale(1.1);
+            border-color: #fcd116;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        Підрозділи Збройних Сил України
+    </header>
+
+    <nav>
+        <a href="Про МОУ.html">Назад</a>
+    </nav>
+
+    <section class="content">
+        <div class="section">
+            <h2>Національна гвардія України</h2>
+            <p>Національна гвардія України (НГУ) — це військове формування з правоохоронними функціями, яке входить до системи МВС України. НГУ забезпечує охорону громадського порядку, захист стратегічних об’єктів, боротьбу з тероризмом, контрдиверсійну діяльність і територіальну оборону.</p>
+            <p><span class="highlight">Гасло:</span> "Служимо українському народу!"</p>
+            
+        </div>
+
+        <div class="section">
+            <h2>Військова поліція: Збройні сили України</h2>
+            <p>Військова поліція Збройних Сил України (ВП ЗСУ) — це спеціалізований підрозділ, який забезпечує підтримку правопорядку, дотримання військової дисципліни, боротьбу зі злочинами в ЗСУ, а також виконує інші завдання, пов’язані із захистом прав військовослужбовців і держави.</p>
+            <h3>Основні завдання військової поліції:</h3>
+            <ul>
+                <li>Підтримка військової дисципліни серед особового складу.</li>
+                <li>Розслідування військових злочинів.</li>
+                <li>Охорона стратегічних об’єктів.</li>
+                <li>Контроль пересування військових і техніки.</li>
+                <li>Здійснення патрулювання військових баз і прилеглих територій.</li>
+                <li>Забезпечення громадського порядку в умовах воєнного стану.</li>
+            </ul>
+            
+        </div>
+
+        <div class="section">
+            <h2>Територіальні центри комплектування та соціальної підтримки (ТЦК) Збройних Сил України</h2>
+            <p>Територіальні центри комплектування та соціальної підтримки (ТЦК) — це структури, які виконують завдання з комплектування особового складу ЗСУ, мобілізаційної роботи, організації взаємодії з громадянами та забезпечення соціального захисту військовослужбовців і їхніх родин.</p>
+            <h3>Основні завдання ТЦК:</h3>
+            <ul>
+                <li>Організація мобілізаційної роботи.</li>
+                <li>Комплектування особового складу ЗСУ, інших військових формувань.</li>
+                <li>Підтримка зв’язку між ЗСУ та цивільним населенням.</li>
+                <li>Проведення заходів територіальної оборони.</li>
+                <li>Надання соціальної підтримки військовослужбовцям, ветеранам та їхнім родинам.</li>
+            </ul>
+            
+        </div>
+
+        <div class="section">
+            <h2>Навчальний корпус (НК)</h2>
+            <p><span class="highlight">Гасло НК:</span> "Знання, сила, відповідальність!"</p>
+            <p>Навчальний Корпус (НК) є ключовим елементом Збройних Сил України, відповідальним за підготовку майбутніх фахівців та військовослужбовців для служби у ЗСУ. Основна місія цього підрозділу полягає у наданні якісної освіти, підвищенні кваліфікації та тренуваннях військовослужбовців для підготовки їх до виконання бойових завдань.</p>
+            <h3>Основні завдання НК:</h3>
+            <ul>
+                <li>Проведення наборів новобранців для проходження служби та навчання у ЗСУ.</li>
+                <li>Проведення військово-лікарських комісій для оцінки стану здоров'я військовозобов'язаних осіб.</li>
+                <li>Проведення тренувань та лекцій з підготовки курсантів до виконання бойових завдань.</li>
+                <li>Підвищення кваліфікації офіцерів та солдатів для підвищення їхнього рівня готовності.</li>
+                <li>Підготовка курсантів НК для подальшої служби в ЗСУ.</li>
+            </ul>
+            
+        </div>
+    </section>
+</body>
+</html>

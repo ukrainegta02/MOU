@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про Головного Командувача ЗСУ</title>
+    <style>
+        /* Загальні стилі для тіла */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #001f3d; /* Темно-синій фон */
+            color: #ffffff; /* Білий текст */
+            text-align: center;
+        }
+
+        /* Стилі для шапки */
+        header {
+            background: linear-gradient(135deg, #001f3d, #003366); /* Градієнт темно-синього */
+            padding: 80px 20px;
+            color: #fcd116; /* Жовтий для контрасту */
+            font-size: 2.3em;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 5px solid #fcd116; /* Жовта лінія для підкреслення */
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3); /* Тінь для глибини */
+            animation: fadeInHeader 1.5s ease-out forwards;
+            border-radius: 0 0 25px 25px; /* Заокруглені кути внизу */
+            z-index: 1;
+        }
+
+        @keyframes fadeInHeader {
+            0% {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 2px; /* Простір між літерами для чистоти */
+            text-transform: uppercase; /* Заголовок великими літерами */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Легка тінь для заголовка */
+        }
+
+        /* Стилі для картки */
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #003366; /* Темно-синій фон для картки */
+            border-radius: 20px;
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2); /* М'яка тінь для глибини */
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            animation: fadeInCard 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInCard {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Стилі для зображення в картці */
+        .card img {
+            max-width: 280px;
+            border-radius: 10px;
+            margin-right: 40px; /* Відстань між зображенням і текстом */
+            animation: slideInImage 1.5s ease-out forwards;
+        }
+
+        @keyframes slideInImage {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Стилі для текстової частини картки */
+        .card .info {
+            text-align: left;
+            font-size: 1.2em;
+            color: #ffffff; /* Білий текст для контрасту */
+            max-width: 600px;
+            animation: fadeInText 2s ease-out forwards;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Заголовок тексту в картці */
+        .card h2 {
+            color: #fcd116; /* Жовтий для заголовка */
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Стиль абзаців в картці */
+        .card p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Стилі для списку */
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 30px;
+            color: #ffffff;
+        }
+
+        .card ul li::before {
+            content: "\2022"; /* Кульки для списку */
+            position: absolute;
+            left: 10px;
+            top: 0;
+            color: #fcd116; /* Жовті кульки */
+            font-size: 1.5em;
+        }
+
+        nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em 1em; /* Зменшені відступи */
+    font-size: 1.1em; /* Трохи зменшений розмір тексту */
+    transition: all 0.3s ease;
+    z-index: 1;
+    border-radius: 15px; /* Трохи менше закруглення */
+    overflow: hidden;
+    animation: slideInNav 1s ease-out;
+    width: fit-content; /* Робить ширину по контенту */
+    min-width: 250px; /* Мінімальна ширина для збереження форми */
+    margin: 1em auto; /* Центрує по горизонталі */
+    position: relative; /* Це дозволить краще контролювати вертикальне розташування */
+}
+
+
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 25px;
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fcd116;
+            transform: scale(1.1);
+            border-color: #fcd116;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Головно Командувач ЗСУ</h1>
+    </header>
+
+    <nav>
+        <a href="Про МОУ.html">Назад</a>
+    </nav>
+
+    <div class="card">
+        <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/84.webp" alt="Олександр Навроцький">
+        <div class="info">
+            <h2>Про Генерала Збройних Сил України</h2>
+            <p>Олександр Навроцький — головний командувач Збройних Сил України, військовий лідер з великим досвідом і глибокими знаннями стратегії оборони. Його лідерство стало ключовим фактором у захисті незалежності України.</p>
+            <p><strong>Олександр Навроцький</strong> має багаторічний досвід служби в армії, на чолі ЗСУ стоїть із значними досягненнями в управлінні та стратегії.</p>
+            <ul>
+                <li>Керував численними операціями ЗСУ під час важливих історичних моментів для країни.</li>
+                <li>Нагороджений численними медалями за мужність та відданість службі.</li>
+                <li>Відзначений за стратегічне мислення та лідерство у складних ситуаціях.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
