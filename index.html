@@ -82,10 +82,11 @@
             font-size: 1.3em;
             transition: all 0.3s ease;
             margin-top: 1em;
-            z-index: 1;
+            z-index: 1000;
             border-radius: 20px;
-            overflow: hidden;
+            overflow: visible;
             animation: slideInNav 1s ease-out;
+            position: relative;
         }
 
         @keyframes slideInNav {
@@ -109,12 +110,56 @@
             border: 2px solid transparent;
             border-radius: 12px;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        nav a:hover {
+        nav a:hover, .dropdown > a:hover {
             color: #fcd116;
             transform: scale(1.1);
             border-color: #fcd116;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1001;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 400px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1002;
+            border-radius: 10px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #fcd116;
+            color: black;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: flex;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
         .content {
@@ -148,7 +193,13 @@
 
     <nav>
         <a href="Про МОУ.html">Про МОУ</a>
-        <a href="Накази.html">Накази</a>
+        <div class="dropdown">
+            <a href="#">Накази</a>
+            <div class="dropdown-content">
+                <a href="Накази.html">Накази Міністра Оборони</a>
+                <a href="Накази Генерали ЗСУ.html">Накази Генерали ЗСУ</a>
+            </div>
+        </div>
         <a href="Структура.html">Структура</a>
         <a href="Контакти.html">Контакти</a>
     </nav>
@@ -171,5 +222,21 @@
             h1.style.animation = 'fadeInText 2s ease-out forwards';
         }
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".dropdown > a").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector(".dropdown").classList.toggle("active");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest(".dropdown")) {
+                document.querySelector(".dropdown").classList.remove("active");
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

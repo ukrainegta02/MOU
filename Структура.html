@@ -260,79 +260,94 @@
         }
 
 
-/* Навігаційне меню */
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1em 0;
-    font-size: 1.3em;
-    transition: all 0.3s ease;
-    margin-top: 1em;
-    z-index: 1;
-    border-radius: 20px; /* Add rounded corners */
-    overflow: hidden; /* To make sure content doesn't overflow the rounded corners */
-}
-
-
-nav a {
-    text-decoration: none;
-    margin: 0 25px;
-    color: #fff;
-    font-weight: 600;
-    position: relative;
-    padding: 5px 10px; /* Add some padding for better appearance */
-    border: 2px solid transparent; /* Transparent border initially */
-    border-radius: 12px; /* Rounded corners */
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    color: #fcd116; /* Yellow color on hover */
-    transform: scale(1.1); /* Slight scale on hover */
-    border-color: #fcd116; /* Add yellow border on hover */
-}
-
-
-nav a:hover {
-    color: #fcd116; /* Yellow color on hover */
-    transform: scale(1.1); /* Slight scale on hover */
-    border-color: #fcd116; /* Add yellow border on hover */
-}
-
-        article strong {
-            color: #f39c12; /* Light Yellow for strong text */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            z-index: 1000;
+            border-radius: 20px;
+            overflow: visible;
+            animation: slideInNav 1s ease-out;
+            position: relative;
         }
 
-        .read-more-btn {
-            display: inline-block;
-            background-color: #f1c40f; /* Yellow color for the button */
-            padding: 10px 20px;
-            font-size: 1.1em;
-            color: #00274d;
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
             text-decoration: none;
-            border-radius: 5px;
+            margin: 0 25px;
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover, .dropdown > a:hover {
+            color: #fcd116;
+            transform: scale(1.1);
+            border-color: #fcd116;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1001;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 400px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1002;
+            border-radius: 10px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
             text-align: center;
-            margin-top: 20px;
+            flex: 1;
         }
 
-        .read-more-btn:hover {
-            background-color: #f39c12; /* Light yellow for hover effect */
+        .dropdown-content a:hover {
+            background-color: #fcd116;
+            color: black;
         }
 
-
-/* Анімація появи меню */
-@keyframes slideInNav {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .dropdown.active .dropdown-content {
+            display: flex;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
 
 
     </style>
@@ -345,10 +360,16 @@ nav a:hover {
     </header>
 
     <nav>
-    <a href="index.html">Головна</a>
-    <a href="Про МОУ.html">Про МОУ</a>
-    <a href="Накази.html">Накази</a>
-    <a href="Контакти.html">Контакти</a>
+        <a href="index.html">Головна</a>
+        <a href="Про МОУ.html">Про МОУ</a>
+        <div class="dropdown">
+            <a href="#">Накази</a>
+            <div class="dropdown-content">
+                <a href="Накази.html">Накази Міністра Оборони</a>
+                <a href="Накази Генерали ЗСУ.html">Накази Генерали ЗСУ</a>
+            </div>
+        </div>
+        <a href="Контакти.html">Контакти</a>
     </nav>
 
 
@@ -403,6 +424,22 @@ nav a:hover {
         // Можна також додати тут перевірку на зміщення елементів чи конкретне місце для розміщення
     }
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".dropdown > a").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector(".dropdown").classList.toggle("active");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest(".dropdown")) {
+                document.querySelector(".dropdown").classList.remove("active");
+            }
+        });
+    });
+</script>
+
 
 </body>
 </html>
